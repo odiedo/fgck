@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Support the work of God at FGCK Malaba through your tithes, offerings, and building fund contributions.">
+<title>Give | FGCK Malaba</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.give-tier-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px; margin-top:32px; }
+.tier-card {
+  background:var(--card); border:1px solid var(--border);
+  border-radius:var(--radius); padding:24px;
+  text-align:center; cursor:pointer; transition:all 0.3s;
+  position:relative;
+}
+.tier-card:hover, .tier-card.popular { border-color:var(--border-h); }
+.tier-card.popular { background:linear-gradient(135deg,rgba(201,168,76,0.07),var(--card)); }
+.tier-badge {
+  position:absolute; top:-10px; left:50%; transform:translateX(-50%);
+  background:var(--gold); color:var(--deep);
+  padding:3px 14px; border-radius:50px;
+  font-size:0.62rem; font-weight:700; letter-spacing:0.08em; white-space:nowrap;
+}
+.tier-amount { font-family:'Cormorant Garamond',serif; font-size:1.8rem; font-weight:700; color:var(--gold); line-height:1; margin-bottom:6px; }
+.tier-freq { font-size:0.72rem; color:var(--text-dim); margin-bottom:14px; }
+.tier-label { font-size:0.82rem; font-weight:600; margin-bottom:8px; }
+.tier-desc { font-size:0.75rem; color:var(--text-muted); line-height:1.6; }
+.partner-perks { display:grid; gap:10px; margin-top:24px; }
+.perk {
+  display:flex; align-items:flex-start; gap:14px;
+  background:rgba(201,168,76,0.04); border:1px solid var(--border);
+  border-radius:10px; padding:16px;
+}
+.perk-icon { font-size:1.3rem; flex-shrink:0; }
+.perk-title { font-size:0.88rem; font-weight:700; margin-bottom:4px; }
+.perk-desc { font-size:0.78rem; color:var(--text-muted); line-height:1.6; }
+</style>
+</head>
+<body>
+<div id="page-loader"><div class="loader-mark"><div class="loader-ring"></div></div><span class="loader-label">GIVE</span></div>
+<div class="cursor-dot"></div><div class="cursor-ring"></div>
+
+<nav class="site-nav" id="navbar">
+  <a href="index.html" class="nav-logo"><div class="nav-logo-emblem"><svg viewBox="0 0 46 46" fill="none"><circle cx="23" cy="23" r="22" stroke="#C9A84C" stroke-width="1" opacity="0.4"/><rect x="21" y="8" width="4" height="30" rx="2" fill="#C9A84C"/><rect x="10" y="15" width="26" height="4" rx="2" fill="#C9A84C"/></svg></div><div class="nav-logo-text"><div class="l1">FGCK Malaba</div><div class="l2">Full Gospel Churches of Kenya</div></div></a>
+  <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="sermons.html">Sermons</a></li><li><a href="events.html">Events</a></li><li><a href="give.html" class="active">Give</a></li><li><a href="contact.html" class="nav-cta">Contact Us</a></li></ul>
+  <button class="nav-hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+</nav>
+<nav class="mobile-nav"><a href="index.html">Home</a><div class="mobile-nav-divider"></div><a href="about.html">About Us</a><a href="sermons.html">Sermons</a><a href="events.html">Events</a><a href="give.html">Give</a><a href="contact.html">Contact</a></nav>
+
+<div class="page-hero">
+  <div class="page-hero-bg"></div><div class="page-hero-grid"></div>
+  <div class="page-hero-content">
+    <div class="page-hero-eyebrow">Stewardship</div>
+    <h1>Give to <em>God's Work</em></h1>
+    <p>Your generosity fuels the mission of FGCK Malaba — from Sunday services to outreach, youth ministry, and our new sanctuary project.</p>
+    <div class="breadcrumb"><a href="index.html">Home</a><span class="sep">/</span><span class="current">Give</span></div>
+  </div>
+</div>
+
+<!-- GIVE SECTION -->
+<section class="section section-dark give-section">
+  <div class="container">
+    <div class="give-grid">
+      <div class="reveal left">
+        <div class="stag">Why We Give</div>
+        <h2 class="stitle" style="margin-bottom:20px;">Sowing Into <em>God's Kingdom</em></h2>
+        <p style="font-size:0.95rem;color:var(--text-muted);line-height:1.85;margin-bottom:16px;">Your generosity powers the ministry of FGCK Malaba — from Sunday services to outreach programs, youth camps, and our new sanctuary project. Every single gift makes an eternal difference.</p>
+        <p style="font-size:0.95rem;color:var(--text-muted);line-height:1.85;margin-bottom:16px;">We believe in radical generosity as a spiritual discipline. Your tithe, offering, and special gifts are sown into good soil and will produce a hundredfold return in your life and in the Kingdom.</p>
+        <div class="verse-block">"Bring the whole tithe into the storehouse, that there may be food in my house. Test me in this," says the Lord Almighty, "and see if I will not throw open the floodgates of heaven and pour out so much blessing that there will not be room enough to store it." <cite>— Malachi 3:10</cite></div>
+        <div class="verse-block" style="margin-top:12px;">"Each of you should give what you have decided in your heart to give, not reluctantly or under compulsion, for God loves a cheerful giver." <cite>— 2 Corinthians 9:7</cite></div>
+
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;margin:32px 0 16px;">Ways to Give</h3>
+        <div class="give-methods">
+          <div class="give-method" onclick="showModal('mpesaModal')"><div class="gm-icon">📱</div><div class="gm-name">M-Pesa Paybill</div><div class="gm-detail">Paybill No: <strong style="color:var(--gold)">400200</strong><br>Account: FGCK Malaba</div></div>
+          <div class="give-method" onclick="showModal('bankModal')"><div class="gm-icon">🏦</div><div class="gm-name">Bank Transfer</div><div class="gm-detail">Equity Bank Kenya<br>Acc: 0123456789876</div></div>
+          <div class="give-method" onclick="showModal('onlineModal')"><div class="gm-icon">💳</div><div class="gm-name">Card / Online</div><div class="gm-detail">Secure online giving<br>Visa · Mastercard · Mpesa</div></div>
+          <div class="give-method"><div class="gm-icon">🙏</div><div class="gm-name">In Person</div><div class="gm-detail">Offering bags every<br>service. All are welcome.</div></div>
+        </div>
+      </div>
+
+      <div class="reveal right">
+        <div class="give-card">
+          <div class="give-card-label">Building Fund Goal 2025</div>
+          <div class="give-card-amount">KSH 5,000,000</div>
+          <div class="give-card-sub">New Sanctuary Construction Project</div>
+          <div class="progress-bg"><div class="progress-fill"></div></div>
+          <div class="progress-note">KSH 3,400,000 raised — 68% of goal achieved 🎉</div>
+          <button class="btn btn-gold btn-block btn-lg" onclick="showModal('giveNowModal')" style="margin-bottom:16px;">Give to Building Fund</button>
+          <div class="gold-rule" style="margin:20px 0;"><span>or</span></div>
+          <h4 style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;margin-bottom:6px;text-align:center;">Tithe & Offering</h4>
+          <p style="font-size:0.78rem;color:var(--text-muted);text-align:center;margin-bottom:20px;line-height:1.6;">Your regular tithe and offering sustains the week-to-week ministry of FGCK Malaba. Use M-Pesa Paybill 400200, Account: FGCK Malaba.</p>
+          <button class="btn btn-ghost btn-block" onclick="showModal('mpesaModal')">📱 Give via M-Pesa</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GIVING TIERS -->
+<section class="section section-deep">
+  <div class="container">
+    <div class="section-head center reveal"><div class="stag">Covenant Partnership</div><h2 class="stitle">Become a <em>Covenant Partner</em></h2><p class="sdesc">Set up a regular giving pledge and partner with FGCK Malaba in a covenant of generosity and faith.</p></div>
+    <div class="give-tier-grid">
+      <div class="tier-card reveal">
+        <div class="tier-amount">KSH 500</div>
+        <div class="tier-freq">Per Month</div>
+        <div class="tier-label">Seed Partner</div>
+        <div class="tier-desc">Support the basic operations and weekly services of our church family.</div>
+        <button class="btn btn-ghost btn-block btn-sm" style="margin-top:16px;" onclick="showModal('partnerModal')">Join</button>
+      </div>
+      <div class="tier-card popular reveal">
+        <div class="tier-badge">Most Popular</div>
+        <div class="tier-amount">KSH 1,000</div>
+        <div class="tier-freq">Per Month</div>
+        <div class="tier-label">Growth Partner</div>
+        <div class="tier-desc">Fund youth ministry, children's church, and weekly outreach programmes.</div>
+        <button class="btn btn-gold btn-block btn-sm" style="margin-top:16px;" onclick="showModal('partnerModal')">Join</button>
+      </div>
+      <div class="tier-card reveal">
+        <div class="tier-amount">KSH 2,500</div>
+        <div class="tier-freq">Per Month</div>
+        <div class="tier-label">Building Partner</div>
+        <div class="tier-desc">Directly contribute to our new sanctuary construction and legacy project.</div>
+        <button class="btn btn-ghost btn-block btn-sm" style="margin-top:16px;" onclick="showModal('partnerModal')">Join</button>
+      </div>
+      <div class="tier-card reveal">
+        <div class="tier-amount">KSH 5,000+</div>
+        <div class="tier-freq">Per Month</div>
+        <div class="tier-label">Legacy Partner</div>
+        <div class="tier-desc">Champion the full mission — missions, welfare, education, and construction.</div>
+        <button class="btn btn-ghost btn-block btn-sm" style="margin-top:16px;" onclick="showModal('partnerModal')">Join</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNER PERKS -->
+<section class="section section-dark">
+  <div class="container-sm">
+    <div class="section-head center reveal"><div class="stag">Our Commitment to You</div><h2 class="stitle">How Your Gift is <em>Used</em></h2></div>
+    <div class="partner-perks">
+      <div class="perk reveal"><div class="perk-icon">🏛️</div><div><div class="perk-title">New Sanctuary Project (40%)</div><div class="perk-desc">Building a permanent, spacious sanctuary that will serve the Malaba community for generations to come.</div></div></div>
+      <div class="perk reveal"><div class="perk-icon">📖</div><div><div class="perk-title">Weekly Ministry Operations (30%)</div><div class="perk-desc">Funding Sunday services, Bible studies, sound systems, printing, and pastoral administration.</div></div></div>
+      <div class="perk reveal"><div class="perk-icon">🌍</div><div><div class="perk-title">Outreach & Community (20%)</div><div class="perk-desc">Street evangelism, hospital visits, food aid for the vulnerable, and missions in surrounding areas.</div></div></div>
+      <div class="perk reveal"><div class="perk-icon">👶</div><div><div class="perk-title">Youth & Children (10%)</div><div class="perk-desc">Funding youth camps, children's church materials, and next-generation discipleship programmes.</div></div></div>
+    </div>
+    <div style="text-align:center;margin-top:44px;" class="reveal">
+      <p style="font-size:0.82rem;color:var(--text-dim);margin-bottom:20px;">Full financial accounts available to church members on request. We believe in transparent stewardship.</p>
+      <a href="contact.html" class="btn btn-outline">Request Financial Report</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand"><h3>Full Gospel Churches of Kenya — Malaba</h3><p>A community of believers dedicated to proclaiming the Full Gospel of Jesus Christ and transforming lives through the power of the Holy Spirit.</p><div class="footer-socials"><div class="footer-social">📘</div><div class="footer-social">💬</div><div class="footer-social">▶️</div><div class="footer-social">📸</div></div></div>
+    <div class="footer-col"><h4>Navigate</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="sermons.html">Sermons</a></li><li><a href="events.html">Events</a></li><li><a href="give.html">Give</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h4>Giving</h4><ul><li><a href="#">M-Pesa: 400200</a></li><li><a href="#">Equity Bank</a></li><li><a href="#">Online Giving</a></li><li><a href="#">Building Fund</a></li><li><a href="#">Partner with Us</a></li></ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul><li><a href="#">Malaba, Busia County</a></li><li><a href="tel:+254700000000">+254 700 000 000</a></li><li><a href="mailto:info@fgckmalaba.org">info@fgckmalaba.org</a></li></ul></div>
+  </div>
+  <div class="footer-bar"><p>© 2025 Full Gospel Churches of Kenya — Malaba.</p><div class="footer-cross"></div><p>Designed with ❤️ for God's Glory</p></div>
+</footer>
+<button id="btt" aria-label="Back to top">↑</button>
+
+<!-- MODALS -->
+<div class="overlay" id="mpesaModal"><div class="modal"><button class="modal-x" onclick="hideModal('mpesaModal')">✕</button><div class="modal-icon">📱</div><h3>Give via M-Pesa</h3><p>Go to M-Pesa → Lipa Na M-Pesa → Pay Bill<br><br>Business No: <strong style="color:var(--gold);font-size:1.3rem;">400200</strong><br>Account No: <strong style="color:var(--gold);">FGCK Malaba</strong><br><br>For tithes, type: TITHE in account<br>For building fund: BUILDING in account</p><button class="btn btn-gold btn-block" onclick="hideModal('mpesaModal')">Done — God Bless You!</button></div></div>
+<div class="overlay" id="bankModal"><div class="modal"><button class="modal-x" onclick="hideModal('bankModal')">✕</button><div class="modal-icon">🏦</div><h3>Bank Transfer Details</h3><p>Bank: <strong style="color:var(--gold)">Equity Bank Kenya</strong><br>Account Name: Full Gospel Churches of Kenya – Malaba<br>Account Number: <strong style="color:var(--gold)">0123456789876</strong><br>Branch: Malaba<br>Swift: EQBLKENA</p><button class="btn btn-gold btn-block" onclick="hideModal('bankModal')">Done — God Bless You!</button></div></div>
+<div class="overlay" id="onlineModal"><div class="modal"><button class="modal-x" onclick="hideModal('onlineModal')">✕</button><div class="modal-icon">💳</div><h3>Online Giving</h3><p>Secure online card giving is coming soon. In the meantime, please use M-Pesa Paybill <strong style="color:var(--gold)">400200</strong> — it's quick, safe, and instant!</p><button class="btn btn-gold btn-block" onclick="hideModal('onlineModal')">Close</button></div></div>
+<div class="overlay" id="giveNowModal"><div class="modal"><button class="modal-x" onclick="hideModal('giveNowModal')">✕</button><div class="modal-icon">🙏</div><h3>Thank You for Your Gift!</h3><p>For the Building Fund, use M-Pesa Paybill <strong style="color:var(--gold)">400200</strong>, Account: <strong style="color:var(--gold)">BUILDING</strong>. Every shilling brings us closer to our new sanctuary. May God multiply your seed!</p><button class="btn btn-gold btn-block" onclick="hideModal('giveNowModal')">Amen — Close</button></div></div>
+<div class="overlay" id="partnerModal"><div class="modal"><button class="modal-x" onclick="hideModal('partnerModal')">✕</button><div class="modal-icon">🤝</div><h3>Become a Covenant Partner</h3><p>Thank you for your heart of generosity! To set up a recurring giving pledge, contact our stewardship team on <strong style="color:var(--gold)">+254 700 000 000</strong> and we will guide you through the process.</p><button class="btn btn-gold btn-block" onclick="hideModal('partnerModal')">God Bless You!</button></div></div>
+
+<script src="main.js"></script>
+</body>
+</html>

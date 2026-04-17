@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Contact FGCK Malaba — find us, call us, submit a prayer request, or plan your visit.">
+<title>Contact Us | FGCK Malaba</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.prayer-wrapper { display:grid; grid-template-columns:1fr 1fr; gap:48px; }
+@media(max-width:760px){ .prayer-wrapper{ grid-template-columns:1fr; } }
+.visit-steps { display:grid; gap:12px; }
+.visit-step {
+  display:flex; align-items:flex-start; gap:16px;
+  background:var(--card); border:1px solid var(--border);
+  border-radius:var(--radius); padding:20px;
+  transition:all 0.3s;
+}
+.visit-step:hover { border-color:var(--border-h); }
+.step-num {
+  width:36px; height:36px; flex-shrink:0;
+  background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25);
+  border-radius:50%; display:flex; align-items:center; justify-content:center;
+  font-family:'Cinzel',serif; font-size:0.78rem; color:var(--gold); font-weight:700;
+}
+.step-title { font-size:0.9rem; font-weight:700; margin-bottom:4px; }
+.step-desc { font-size:0.78rem; color:var(--text-muted); line-height:1.6; }
+</style>
+</head>
+<body>
+<div id="page-loader"><div class="loader-mark"><div class="loader-ring"></div></div><span class="loader-label">CONTACT</span></div>
+<div class="cursor-dot"></div><div class="cursor-ring"></div>
+
+<nav class="site-nav" id="navbar">
+  <a href="index.html" class="nav-logo"><div class="nav-logo-emblem"><svg viewBox="0 0 46 46" fill="none"><circle cx="23" cy="23" r="22" stroke="#C9A84C" stroke-width="1" opacity="0.4"/><rect x="21" y="8" width="4" height="30" rx="2" fill="#C9A84C"/><rect x="10" y="15" width="26" height="4" rx="2" fill="#C9A84C"/></svg></div><div class="nav-logo-text"><div class="l1">FGCK Malaba</div><div class="l2">Full Gospel Churches of Kenya</div></div></a>
+  <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="sermons.html">Sermons</a></li><li><a href="events.html">Events</a></li><li><a href="give.html">Give</a></li><li><a href="contact.html" class="nav-cta active">Contact Us</a></li></ul>
+  <button class="nav-hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+</nav>
+<nav class="mobile-nav"><a href="index.html">Home</a><div class="mobile-nav-divider"></div><a href="about.html">About Us</a><a href="sermons.html">Sermons</a><a href="events.html">Events</a><a href="give.html">Give</a><a href="contact.html">Contact</a></nav>
+
+<div class="page-hero">
+  <div class="page-hero-bg"></div><div class="page-hero-grid"></div>
+  <div class="page-hero-content">
+    <div class="page-hero-eyebrow">Reach Out</div>
+    <h1>Get In <em>Touch</em></h1>
+    <p>We would love to hear from you. Visit us, call us, or send a message — our doors are always open.</p>
+    <div class="breadcrumb"><a href="index.html">Home</a><span class="sep">/</span><span class="current">Contact</span></div>
+  </div>
+</div>
+
+<!-- CONTACT INFO + FORM -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="reveal left">
+        <div class="stag">Find Us</div>
+        <h2 class="stitle" style="margin-bottom:28px;">Contact <em>Information</em></h2>
+        <div class="cinfo-grid">
+          <div class="cinfo-card"><div class="cinfo-icon">📍</div><div class="cinfo-lbl">Address</div><div class="cinfo-val">FGCK Malaba<br>Along Malaba–Busia Road<br>Malaba Town, Busia County</div></div>
+          <div class="cinfo-card"><div class="cinfo-icon">📞</div><div class="cinfo-lbl">Phone</div><div class="cinfo-val"><a href="tel:+254700000000" style="color:var(--gold);">+254 700 000 000</a><br><a href="tel:+254722000000" style="color:var(--text-muted);">+254 722 000 000</a></div></div>
+          <div class="cinfo-card"><div class="cinfo-icon">📧</div><div class="cinfo-lbl">Email</div><div class="cinfo-val"><a href="mailto:info@fgckmalaba.org" style="color:var(--gold);">info@fgckmalaba.org</a><br><a href="mailto:pastor@fgckmalaba.org" style="color:var(--text-muted);">pastor@fgckmalaba.org</a></div></div>
+          <div class="cinfo-card"><div class="cinfo-icon">🕐</div><div class="cinfo-lbl">Office Hours</div><div class="cinfo-val">Mon–Fri: 9AM–5PM<br>Saturday: 9AM–12PM</div></div>
+        </div>
+        <div class="map-box" onclick="window.open('https://maps.google.com/?q=Malaba,Busia,Kenya','_blank')">
+          🗺️
+          <div class="map-overlay"><span class="btn btn-gold btn-sm">Open in Google Maps →</span></div>
+        </div>
+        <div class="socials" style="margin-top:20px;">
+          <div class="social-btn" title="Facebook" onclick="window.open('#','_blank')">📘</div>
+          <div class="social-btn" title="WhatsApp" onclick="window.open('https://wa.me/254700000000','_blank')">💬</div>
+          <div class="social-btn" title="YouTube">▶️</div>
+          <div class="social-btn" title="Instagram">📸</div>
+          <div class="social-btn" title="Twitter/X">🐦</div>
+          <div class="social-btn" title="TikTok">🎵</div>
+        </div>
+      </div>
+
+      <div class="reveal right">
+        <div class="card card-pad">
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;margin-bottom:8px;">Send Us a Message</h3>
+          <p style="font-size:0.84rem;color:var(--text-muted);margin-bottom:28px;line-height:1.7;">We respond to all messages within 24 hours. We would love to connect with you!</p>
+          <div class="field-row">
+            <div class="field"><label>First Name</label><input type="text" placeholder="John"></div>
+            <div class="field"><label>Last Name</label><input type="text" placeholder="Doe"></div>
+          </div>
+          <div class="field"><label>Email Address</label><input type="email" placeholder="john@email.com"></div>
+          <div class="field"><label>Phone / WhatsApp</label><input type="tel" placeholder="+254 700 000 000"></div>
+          <div class="field">
+            <label>Subject</label>
+            <select>
+              <option>General Inquiry</option>
+              <option>I'm a First-Time Visitor</option>
+              <option>Ministry Partnership</option>
+              <option>Counselling Request</option>
+              <option>Event Information</option>
+              <option>Media Request</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field"><label>Message</label><textarea placeholder="Write your message here..."></textarea></div>
+          <button class="btn btn-gold btn-block" data-form-submit="contactModal">✉️ Send Message</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLAN YOUR VISIT -->
+<section class="section section-deep">
+  <div class="container-sm">
+    <div class="section-head center reveal">
+      <div class="stag">First Time?</div>
+      <h2 class="stitle">Plan Your <em>Visit</em></h2>
+      <p class="sdesc">We want your first visit to FGCK Malaba to be special. Here's everything you need to know.</p>
+    </div>
+    <div class="visit-steps">
+      <div class="visit-step reveal"><div class="step-num">1</div><div><div class="step-title">📅 Choose Your Service</div><div class="step-desc">We recommend Sunday Morning at 10:00 AM for first-time visitors. It's our main service with children's church available concurrently.</div></div></div>
+      <div class="visit-step reveal"><div class="step-num">2</div><div><div class="step-title">📍 Find Our Location</div><div class="step-desc">We are located along the Malaba–Busia Road in Malaba Town, Busia County. Ask anyone in Malaba for "FGCK Malaba" — we are well known!</div></div></div>
+      <div class="visit-step reveal"><div class="step-num">3</div><div><div class="step-title">👗 Come as You Are</div><div class="step-desc">There is no dress code at FGCK Malaba. Come in what makes you comfortable. You will be warmly welcomed by our greeters at the door.</div></div></div>
+      <div class="visit-step reveal"><div class="step-num">4</div><div><div class="step-title">🙋 Let Us Know You're Coming</div><div class="step-desc">WhatsApp us on +254 700 000 000 so we can personally welcome you. We have a special gift for first-time visitors!</div></div></div>
+      <div class="visit-step reveal"><div class="step-num">5</div><div><div class="step-title">☕ Stay for Fellowship</div><div class="step-desc">After the service, please stay for tea and snacks. It's the best way to meet our congregation and feel at home immediately.</div></div></div>
+    </div>
+    <div style="text-align:center;margin-top:40px;" class="reveal">
+      <a href="https://wa.me/254700000000" class="btn btn-gold btn-lg" target="_blank">💬 WhatsApp Us Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- PRAYER REQUESTS -->
+<section class="section section-dark" id="prayer">
+  <div class="container">
+    <div class="section-head center reveal">
+      <div class="stag">Intercession</div>
+      <h2 class="stitle">Submit a <em>Prayer Request</em></h2>
+      <p class="sdesc">Every prayer request is treated with love and confidentiality. Our dedicated intercessors pray for you daily.</p>
+    </div>
+    <div class="prayer-wrapper">
+      <div class="card card-pad reveal">
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;margin-bottom:8px;">We Are Praying For You</h3>
+        <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:24px;line-height:1.7;">Share your request and our prayer team will intercede on your behalf. Nothing is too big or too small for God.</p>
+        <div class="field-row">
+          <div class="field"><label>Your Name</label><input type="text" placeholder="Full Name"></div>
+          <div class="field"><label>Phone / WhatsApp</label><input type="tel" placeholder="+254 ..."></div>
+        </div>
+        <div class="field">
+          <label>Prayer Category</label>
+          <select>
+            <option>Health & Healing</option>
+            <option>Marriage & Family</option>
+            <option>Finances & Provision</option>
+            <option>Salvation of a Loved One</option>
+            <option>Career & Education</option>
+            <option>Spiritual Breakthrough</option>
+            <option>Deliverance & Freedom</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="field"><label>Your Prayer Request</label><textarea placeholder="Share what's on your heart..." style="min-height:140px;"></textarea></div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px;">
+          <input type="checkbox" id="anon" style="width:16px;height:16px;accent-color:var(--gold);">
+          <label for="anon" style="font-size:0.8rem;color:var(--text-muted);cursor:pointer;">Keep my request anonymous</label>
+        </div>
+        <button class="btn btn-gold btn-block" data-form-submit="prayerModal">🙏 Submit Prayer Request</button>
+      </div>
+
+      <div class="reveal right">
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;margin-bottom:20px;">God's Promises on Prayer</h3>
+        <div class="promise-grid">
+          <div class="promise-card"><div class="promise-text">"Ask and it will be given to you; seek and you will find; knock and the door will be opened to you."</div><div class="promise-ref">Matthew 7:7</div></div>
+          <div class="promise-card"><div class="promise-text">"Do not be anxious about anything, but in every situation, by prayer and petition, with thanksgiving, present your requests to God."</div><div class="promise-ref">Philippians 4:6</div></div>
+          <div class="promise-card"><div class="promise-text">"The prayer of a righteous person is powerful and effective."</div><div class="promise-ref">James 5:16</div></div>
+          <div class="promise-card"><div class="promise-text">"Call to me and I will answer you and tell you great and unsearchable things you do not know."</div><div class="promise-ref">Jeremiah 33:3</div></div>
+          <div class="promise-card"><div class="promise-text">"And I will do whatever you ask in my name, so that the Father may be glorified in the Son."</div><div class="promise-ref">John 14:13</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand"><h3>Full Gospel Churches of Kenya — Malaba</h3><p>A community of believers dedicated to proclaiming the Full Gospel of Jesus Christ and transforming lives through the power of the Holy Spirit.</p><div class="footer-socials"><div class="footer-social">📘</div><div class="footer-social">💬</div><div class="footer-social">▶️</div><div class="footer-social">📸</div></div></div>
+    <div class="footer-col"><h4>Navigate</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="sermons.html">Sermons</a></li><li><a href="events.html">Events</a></li><li><a href="give.html">Give</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h4>Reach Us</h4><ul><li><a href="#">Malaba, Busia County</a></li><li><a href="tel:+254700000000">+254 700 000 000</a></li><li><a href="mailto:info@fgckmalaba.org">info@fgckmalaba.org</a></li><li><a href="#prayer">Prayer Request</a></li></ul></div>
+    <div class="footer-col"><h4>Services</h4><ul><li><a href="#">Sunday 10:00 AM</a></li><li><a href="#">Sunday 3:00 PM</a></li><li><a href="#">Wednesday 5:30 PM</a></li><li><a href="#">Friday 7:00 PM</a></li></ul></div>
+  </div>
+  <div class="footer-bar"><p>© 2025 Full Gospel Churches of Kenya — Malaba.</p><div class="footer-cross"></div><p>Designed with ❤️ for God's Glory</p></div>
+</footer>
+<button id="btt" aria-label="Back to top">↑</button>
+
+<!-- MODALS -->
+<div class="overlay" id="contactModal"><div class="modal"><button class="modal-x" onclick="hideModal('contactModal')">✕</button><div class="modal-icon">✉️</div><h3>Message Sent!</h3><p>Thank you for reaching out to FGCK Malaba. We have received your message and will respond within 24 hours. God bless you abundantly!</p><button class="btn btn-gold btn-block" onclick="hideModal('contactModal')">Close</button></div></div>
+<div class="overlay" id="prayerModal"><div class="modal"><button class="modal-x" onclick="hideModal('prayerModal')">✕</button><div class="modal-icon">🙏</div><h3>Prayer Request Received!</h3><p>Your request has been sent to our intercession team. We are standing in faith with you, believing God for your breakthrough. <strong style="color:var(--gold)">"Nothing is impossible with God."</strong></p><button class="btn btn-gold btn-block" onclick="hideModal('prayerModal')">Thank You — Amen!</button></div></div>
+
+<script src="main.js"></script>
+</body>
+</html>

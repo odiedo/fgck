@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Listen to powerful sermons from FGCK Malaba — Sunday messages, teaching series, and special messages.">
+<title>Sermons | FGCK Malaba</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.series-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:20px; }
+.series-card {
+  background:var(--card); border:1px solid var(--border);
+  border-radius:var(--radius-lg); overflow:hidden;
+  transition:all 0.4s var(--ease); cursor:pointer;
+}
+.series-card:hover { border-color:var(--border-h); transform:translateY(-6px); box-shadow:0 24px 60px rgba(0,0,0,0.5); }
+.series-thumb {
+  height:160px; display:flex; align-items:center; justify-content:center;
+  font-size:4rem; position:relative;
+}
+.series-thumb::after {
+  content:''; position:absolute; inset:0;
+  background:linear-gradient(to bottom,transparent 40%,rgba(19,19,32,0.9));
+}
+.series-body { padding:22px; }
+.series-count { font-size:0.68rem; color:var(--gold); letter-spacing:0.1em; text-transform:uppercase; font-weight:700; margin-bottom:6px; }
+.series-name { font-family:'Cormorant Garamond',serif; font-size:1.15rem; font-weight:700; margin-bottom:8px; line-height:1.3; }
+.series-desc { font-size:0.8rem; color:var(--text-muted); line-height:1.65; }
+.filter-bar {
+  display:flex; gap:10px; flex-wrap:wrap;
+  margin-bottom:36px;
+}
+.filter-btn {
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.07);
+  border-radius:50px;
+  padding:8px 20px;
+  font-size:0.78rem; font-weight:600;
+  color:var(--text-muted);
+  cursor:pointer; transition:all 0.3s;
+  font-family:'Jost',sans-serif;
+}
+.filter-btn.active,
+.filter-btn:hover { background:rgba(201,168,76,0.12); border-color:var(--gold); color:var(--gold); }
+</style>
+</head>
+<body>
+<div id="page-loader"><div class="loader-mark"><div class="loader-ring"></div></div><span class="loader-label">SERMONS</span></div>
+<div class="cursor-dot"></div><div class="cursor-ring"></div>
+
+<nav class="site-nav" id="navbar">
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-emblem"><svg viewBox="0 0 46 46" fill="none"><circle cx="23" cy="23" r="22" stroke="#C9A84C" stroke-width="1" opacity="0.4"/><rect x="21" y="8" width="4" height="30" rx="2" fill="#C9A84C"/><rect x="10" y="15" width="26" height="4" rx="2" fill="#C9A84C"/></svg></div>
+    <div class="nav-logo-text"><div class="l1">FGCK Malaba</div><div class="l2">Full Gospel Churches of Kenya</div></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="sermons.html" class="active">Sermons</a></li><li><a href="events.html">Events</a></li>
+    <li><a href="give.html">Give</a></li><li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+  </ul>
+  <button class="nav-hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+</nav>
+<nav class="mobile-nav"><a href="index.html">Home</a><div class="mobile-nav-divider"></div><a href="about.html">About Us</a><a href="sermons.html">Sermons</a><a href="events.html">Events</a><a href="give.html">Give</a><a href="contact.html">Contact</a></nav>
+
+<div class="page-hero">
+  <div class="page-hero-bg"></div><div class="page-hero-grid"></div>
+  <div class="page-hero-content">
+    <div class="page-hero-eyebrow">The Word</div>
+    <h1>Sermons <em>&</em> Messages</h1>
+    <p>Be transformed by the renewing of your mind. Nourish your soul with God's Word from our pulpit.</p>
+    <div class="breadcrumb"><a href="index.html">Home</a><span class="sep">/</span><span class="current">Sermons</span></div>
+  </div>
+</div>
+
+<!-- FEATURED SERMON -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="section-head reveal"><div class="stag">Latest Message</div><h2 class="stitle">This Week's <em>Sermon</em></h2></div>
+    <div class="sermon-featured-grid reveal">
+      <div class="sf-thumb">🎙️<div class="sf-play" onclick="showModal('playModal')">▶</div></div>
+      <div class="sf-info">
+        <div class="sf-meta"><span class="tag tag-gold">Sunday Morning</span><span style="font-size:0.75rem;color:var(--text-muted);">April 13, 2025</span></div>
+        <div class="sf-title">"Walking in Covenant: The Promise That Never Fails"</div>
+        <div class="sf-speaker">By <strong>Ps. Daniel Ochieng</strong> · Sunday Morning Service · Genesis 15</div>
+        <div class="sf-excerpt">God's covenant with His people is not based on our performance but on His faithfulness. In this powerful message, Pastor Daniel unpacks Genesis 15 to reveal the unbreakable promises of God for your life, your family, and your destiny. A message that will anchor your soul and strengthen your faith for the week ahead.</div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <button class="btn btn-gold" onclick="showModal('playModal')">▶ Listen Now</button>
+          <button class="btn btn-outline" onclick="showModal('downloadModal')">⬇ Download MP3</button>
+          <button class="btn btn-ghost" onclick="showModal('shareModal')">↗ Share</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERMON SERIES -->
+<section class="section section-deep">
+  <div class="container">
+    <div class="section-head center reveal">
+      <div class="stag">Teaching Series</div>
+      <h2 class="stitle">Sermon <em>Series</em></h2>
+      <p class="sdesc">Deep-dive teaching series designed to systematically ground you in God's Word.</p>
+    </div>
+    <div class="series-grid">
+      <div class="series-card reveal">
+        <div class="series-thumb" style="background:linear-gradient(135deg,#1a0a2e,#0e0a1a);">📿</div>
+        <div class="series-body">
+          <div class="series-count">8 Messages</div>
+          <div class="series-name">"Foundations of Faith"</div>
+          <div class="series-desc">A systematic study of the foundational doctrines of Christianity — salvation, baptism, the Holy Spirit, and eternal life.</div>
+        </div>
+      </div>
+      <div class="series-card reveal">
+        <div class="series-thumb" style="background:linear-gradient(135deg,#0a1a0a,#0a200a);">🌱</div>
+        <div class="series-body">
+          <div class="series-count">6 Messages · Ongoing</div>
+          <div class="series-name">"Growing in Grace"</div>
+          <div class="series-desc">How to practically grow in your relationship with God through prayer, fasting, Scripture, and community.</div>
+        </div>
+      </div>
+      <div class="series-card reveal">
+        <div class="series-thumb" style="background:linear-gradient(135deg,#2e1a0a,#1a0e0a);">🏠</div>
+        <div class="series-body">
+          <div class="series-count">5 Messages</div>
+          <div class="series-name">"Kingdom Marriages"</div>
+          <div class="series-desc">God's design for marriage, family, and raising godly children in a challenging modern world.</div>
+        </div>
+      </div>
+      <div class="series-card reveal">
+        <div class="series-thumb" style="background:linear-gradient(135deg,#1a1a0a,#2a2a0a);">👑</div>
+        <div class="series-body">
+          <div class="series-count">10 Messages</div>
+          <div class="series-name">"Kingdom Economics"</div>
+          <div class="series-desc">God's principles of financial stewardship, generosity, and living in kingdom abundance — not poverty.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ALL SERMONS LIST -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="stag">Archive</div>
+      <h2 class="stitle">Recent <em>Messages</em></h2>
+    </div>
+    <div class="filter-bar reveal">
+      <button class="filter-btn active">All</button>
+      <button class="filter-btn">Sunday Morning</button>
+      <button class="filter-btn">Sunday Evening</button>
+      <button class="filter-btn">Bible Study</button>
+      <button class="filter-btn">Special Messages</button>
+      <button class="filter-btn">Guest Speakers</button>
+    </div>
+    <div class="sermon-list">
+      <div class="sl-item reveal"><div class="sl-num">01</div><div class="sl-info"><div class="sl-title">"Walking in Covenant: The Promise That Never Fails"</div><div class="sl-meta">Ps. Daniel Ochieng · April 13, 2025 · Genesis 15 · Sunday Morning</div></div><div class="sl-play" onclick="showModal('playModal')">▶</div></div>
+      <div class="sl-item reveal"><div class="sl-num">02</div><div class="sl-info"><div class="sl-title">"The Spirit of Excellence in a Mediocre World"</div><div class="sl-meta">Ps. Grace Ochieng · April 6, 2025 · Daniel 6 · Sunday Morning</div></div><div class="sl-play" onclick="showModal('playModal')">▶</div></div>
+      <div class="sl-item reveal"><div class="sl-num">03</div><div class="sl-info"><div class="sl-title">"Unshakeable: Faith That Survives Every Storm"</div><div class="sl-meta">Ps. Daniel Ochieng · March 30, 2025 · Matthew 7:24–27 · Sunday Morning</div></div><div class="sl-play" onclick="showModal('playModal')">▶</div></div>
+      <div class="sl-item reveal"><div class="sl-num">04</div><div class="sl-info"><div class="sl-title">"Arise and Shine: Your Season Has Come"</div><div class="sl-meta">Guest Minister · March 23, 2025 · Isaiah 60:1 · Special Service</div></div><div class="sl-play" onclick="showModal('playModal')">▶</div></div>
+      <div class="sl-item reveal"><div class="sl-num">05</div><div class="sl-info"><div class="sl-title">"Breaking the Chains: Freedom Through the Cross"</div><div class="sl-meta">Ps. Daniel Ochieng · March 16, 2025 · Galatians 5:1 · Sunday Morning</div></div><div class="sl-play" onclick="showModal('playModal')">▶</div></div>
+      <div class="sl-item reveal"><div class="sl-num">06</div><div class="sl-info"><div class="sl-title">"The Power of a Praying Church"</div><div class="sl-meta">Ps. Grace Ochieng · March 9, 2025 · Acts 4:24–31 · Sunday Evening</div></div><div class="sl-play" onclick="showModal('playModal')">▶</div></div>
+      <div class="sl-item reveal"><div class="sl-num">07</div><div class="sl-info"><div class="sl-title">"Kingdom Economics: You Are Blessed to Be a Blessing"</div><div class="sl-meta">Ps. Daniel Ochieng · March 2, 2025 · Deuteronomy 8 · Sunday Morning</div></div><div class="sl-play" onclick="showModal('playModal')">▶</div></div>
+      <div class="sl-item reveal"><div class="sl-num">08</div><div class="sl-info"><div class="sl-title">"New Wine, New Wineskins: Embracing God's Move"</div><div class="sl-meta">Guest Minister · Feb 23, 2025 · Mark 2:22 · Special Service</div></div><div class="sl-play" onclick="showModal('playModal')">▶</div></div>
+      <div class="sl-item reveal"><div class="sl-num">09</div><div class="sl-info"><div class="sl-title">"The Battle Is the Lord's"</div><div class="sl-meta">Ps. Daniel Ochieng · Feb 16, 2025 · 2 Chronicles 20 · Sunday Morning</div></div><div class="sl-play" onclick="showModal('playModal')">▶</div></div>
+      <div class="sl-item reveal"><div class="sl-num">10</div><div class="sl-info"><div class="sl-title">"From Glory to Glory: Continuous Transformation"</div><div class="sl-meta">Ps. Grace Ochieng · Feb 9, 2025 · 2 Corinthians 3:18 · Sunday Morning</div></div><div class="sl-play" onclick="showModal('playModal')">▶</div></div>
+    </div>
+    <div style="text-align:center;margin-top:40px;" class="reveal">
+      <button class="btn btn-outline" onclick="showModal('loadMoreModal')">Load More Sermons</button>
+    </div>
+  </div>
+</section>
+
+<!-- SUBSCRIBE / PODCAST -->
+<section class="section-sm section-deep" style="background:linear-gradient(135deg,rgba(201,168,76,0.06),transparent);padding:70px 24px;">
+  <div class="container-sm" style="text-align:center;">
+    <div class="stag reveal" style="justify-content:center;">Never Miss a Message</div>
+    <h2 class="stitle reveal" style="margin-bottom:16px;">Subscribe to Our <em>Podcast</em></h2>
+    <p class="sdesc reveal" style="margin:0 auto 36px;">Get every new sermon delivered directly to your phone. Available on Spotify, Apple Podcasts, YouTube, and more.</p>
+    <div class="reveal" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+      <button class="btn btn-gold">🎵 Spotify</button>
+      <button class="btn btn-outline">🍎 Apple Podcasts</button>
+      <button class="btn btn-ghost">▶️ YouTube</button>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand"><h3>Full Gospel Churches of Kenya — Malaba</h3><p>A community of believers dedicated to proclaiming the Full Gospel of Jesus Christ and transforming lives through the power of the Holy Spirit.</p><div class="footer-socials"><div class="footer-social">📘</div><div class="footer-social">💬</div><div class="footer-social">▶️</div><div class="footer-social">📸</div></div></div>
+    <div class="footer-col"><h4>Navigate</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="sermons.html">Sermons</a></li><li><a href="events.html">Events</a></li><li><a href="give.html">Give</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h4>Sermons</h4><ul><li><a href="#">Latest Message</a></li><li><a href="#">Series Archive</a></li><li><a href="#">YouTube Channel</a></li><li><a href="#">Podcast</a></li></ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul><li><a href="#">Malaba, Busia County</a></li><li><a href="tel:+254700000000">+254 700 000 000</a></li><li><a href="mailto:info@fgckmalaba.org">info@fgckmalaba.org</a></li></ul></div>
+  </div>
+  <div class="footer-bar"><p>© 2025 Full Gospel Churches of Kenya — Malaba.</p><div class="footer-cross"></div><p>Designed with ❤️ for God's Glory</p></div>
+</footer>
+<button id="btt" aria-label="Back to top">↑</button>
+
+<!-- MODALS -->
+<div class="overlay" id="playModal"><div class="modal"><button class="modal-x" onclick="hideModal('playModal')">✕</button><div class="modal-icon">🎙️</div><h3>Sermon Player</h3><p>Our full audio and video library is available on our YouTube channel and podcast platforms. Subscribe to never miss a message from FGCK Malaba.</p><button class="btn btn-gold btn-block" onclick="hideModal('playModal')">Got it — Amen!</button></div></div>
+<div class="overlay" id="downloadModal"><div class="modal"><button class="modal-x" onclick="hideModal('downloadModal')">✕</button><div class="modal-icon">⬇️</div><h3>Download Sermon</h3><p>All sermon MP3s are available on our podcast and via WhatsApp broadcast. Join our WhatsApp group on <strong style="color:var(--gold)">+254 700 000 000</strong> to receive weekly sermon downloads.</p><button class="btn btn-gold btn-block" onclick="hideModal('downloadModal')">Close</button></div></div>
+<div class="overlay" id="shareModal"><div class="modal"><button class="modal-x" onclick="hideModal('shareModal')">✕</button><div class="modal-icon">↗️</div><h3>Share This Sermon</h3><p>Share God's Word with your friends and family on WhatsApp, Facebook, or any platform. The Gospel is for everyone!</p><button class="btn btn-gold btn-block" onclick="hideModal('shareModal')">Close</button></div></div>
+<div class="overlay" id="loadMoreModal"><div class="modal"><button class="modal-x" onclick="hideModal('loadMoreModal')">✕</button><div class="modal-icon">📚</div><h3>Full Archive Coming Soon</h3><p>We are digitising our full sermon archive. For older messages, contact us on WhatsApp and we will send them directly to you.</p><button class="btn btn-gold btn-block" onclick="hideModal('loadMoreModal')">Close</button></div></div>
+<script src="main.js"></script>
+<script>
+  // Filter buttons
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>

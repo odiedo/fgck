@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Church events, camps, special services, and upcoming programmes at FGCK Malaba.">
+<title>Events | FGCK Malaba</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.calendar-strip {
+  display:flex; gap:8px; overflow-x:auto;
+  padding-bottom:4px; margin-bottom:44px;
+  scrollbar-width:none;
+}
+.calendar-strip::-webkit-scrollbar { display:none; }
+.cal-month {
+  flex-shrink:0;
+  background:var(--card); border:1px solid var(--border);
+  border-radius:10px; padding:10px 18px;
+  font-size:0.78rem; font-weight:600;
+  color:var(--text-muted); cursor:pointer;
+  transition:all 0.3s; white-space:nowrap;
+  font-family:'Cinzel',serif; letter-spacing:0.06em;
+}
+.cal-month.active,
+.cal-month:hover { background:rgba(201,168,76,0.12); border-color:var(--gold); color:var(--gold); }
+.event-featured {
+  display:grid; grid-template-columns:1.2fr 1fr;
+  gap:0; border-radius:var(--radius-lg); overflow:hidden;
+  border:1px solid var(--border-h);
+  margin-bottom:48px;
+  box-shadow:0 0 60px rgba(201,168,76,0.08);
+}
+.ef-visual {
+  background:linear-gradient(135deg,#0e0e2a,#1a0e2e);
+  display:flex; align-items:center; justify-content:center;
+  font-size:7rem; min-height:280px; position:relative;
+}
+.ef-visual .ef-tag {
+  position:absolute; top:20px; left:20px;
+  background:var(--gold); color:var(--deep);
+  padding:8px 16px; border-radius:50px;
+  font-size:0.68rem; font-weight:700; letter-spacing:0.08em;
+}
+.ef-info { background:var(--card); padding:40px; display:flex; flex-direction:column; justify-content:center; }
+.ef-date { font-family:'Cinzel',serif; font-size:0.7rem; letter-spacing:0.2em; color:var(--gold); margin-bottom:12px; }
+.ef-title { font-family:'Cormorant Garamond',serif; font-size:1.8rem; font-weight:700; line-height:1.2; margin-bottom:14px; }
+.ef-desc { font-size:0.88rem; color:var(--text-muted); line-height:1.8; margin-bottom:24px; flex:1; }
+.ef-details { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:24px; }
+.ef-detail { display:flex; align-items:center; gap:8px; font-size:0.8rem; color:var(--text-muted); }
+</style>
+</head>
+<body>
+<div id="page-loader"><div class="loader-mark"><div class="loader-ring"></div></div><span class="loader-label">EVENTS</span></div>
+<div class="cursor-dot"></div><div class="cursor-ring"></div>
+
+<nav class="site-nav" id="navbar">
+  <a href="index.html" class="nav-logo"><div class="nav-logo-emblem"><svg viewBox="0 0 46 46" fill="none"><circle cx="23" cy="23" r="22" stroke="#C9A84C" stroke-width="1" opacity="0.4"/><rect x="21" y="8" width="4" height="30" rx="2" fill="#C9A84C"/><rect x="10" y="15" width="26" height="4" rx="2" fill="#C9A84C"/></svg></div><div class="nav-logo-text"><div class="l1">FGCK Malaba</div><div class="l2">Full Gospel Churches of Kenya</div></div></a>
+  <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="sermons.html">Sermons</a></li><li><a href="events.html" class="active">Events</a></li><li><a href="give.html">Give</a></li><li><a href="contact.html" class="nav-cta">Contact Us</a></li></ul>
+  <button class="nav-hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+</nav>
+<nav class="mobile-nav"><a href="index.html">Home</a><div class="mobile-nav-divider"></div><a href="about.html">About Us</a><a href="sermons.html">Sermons</a><a href="events.html">Events</a><a href="give.html">Give</a><a href="contact.html">Contact</a></nav>
+
+<div class="page-hero">
+  <div class="page-hero-bg"></div><div class="page-hero-grid"></div>
+  <div class="page-hero-content">
+    <div class="page-hero-eyebrow">What's On</div>
+    <h1>Church <em>Events</em></h1>
+    <p>Mark your calendar. Life-changing experiences, special services, and community programmes await you at FGCK Malaba.</p>
+    <div class="breadcrumb"><a href="index.html">Home</a><span class="sep">/</span><span class="current">Events</span></div>
+  </div>
+</div>
+
+<!-- FEATURED EVENT -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="section-head reveal"><div class="stag">Next Big Event</div><h2 class="stitle">Don't Miss <em>This</em></h2></div>
+    <div class="event-featured reveal">
+      <div class="ef-visual">🎶<div class="ef-tag">⭐ Featured Event</div></div>
+      <div class="ef-info">
+        <div class="ef-date">SATURDAY, JULY 19, 2025</div>
+        <div class="ef-title">FGCK Malaba Annual Worship Night 2025</div>
+        <div class="ef-desc">An unforgettable evening of worship, prayer, and the manifest presence of God. Guest worship teams from across the Western Region, powerful declarations, and a night that will transform your spiritual life. Bring your entire family — this is a free event open to all!</div>
+        <div class="ef-details">
+          <div class="ef-detail">🕕 5:00 PM – Midnight</div>
+          <div class="ef-detail">📍 FGCK Malaba Grounds</div>
+          <div class="ef-detail">🎟️ Free Admission</div>
+          <div class="ef-detail">👥 All Ages Welcome</div>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <button class="btn btn-gold" onclick="showModal('regModal')">Register for Free</button>
+          <button class="btn btn-outline" onclick="showModal('shareEventModal')">↗ Share Event</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALENDAR STRIP + ALL EVENTS -->
+<section class="section section-deep">
+  <div class="container">
+    <div class="section-head reveal"><div class="stag">2025 Calendar</div><h2 class="stitle">Upcoming <em>Events</em></h2></div>
+    <div class="calendar-strip reveal">
+      <div class="cal-month active">All</div>
+      <div class="cal-month">April</div>
+      <div class="cal-month">May</div>
+      <div class="cal-month">June</div>
+      <div class="cal-month">July</div>
+      <div class="cal-month">August</div>
+      <div class="cal-month">September</div>
+      <div class="cal-month">October</div>
+      <div class="cal-month">November</div>
+      <div class="cal-month">December</div>
+    </div>
+    <div class="events-grid">
+      <div class="ev-card reveal">
+        <div class="ev-banner" style="background:linear-gradient(135deg,#1a1a2e,#0e0e20);">🎉<div class="ev-date-pill"><div class="d">27</div><div class="m">Apr</div></div></div>
+        <div class="ev-body"><div class="ev-cat">Special Service</div><div class="ev-title">Easter Sunday Celebration</div><div class="ev-desc">A grand celebration of the Resurrection — special music, drama, and a powerful message of hope. Come dressed in white!</div><div class="ev-footer"><div class="ev-time">🕙 8:00 AM – 1:00 PM</div><button class="btn btn-ghost btn-sm" onclick="showModal('regModal')">Register</button></div></div>
+      </div>
+      <div class="ev-card reveal">
+        <div class="ev-banner" style="background:linear-gradient(135deg,#1a2e1a,#0e200e);">🏕️<div class="ev-date-pill"><div class="d">15</div><div class="m">May</div></div></div>
+        <div class="ev-body"><div class="ev-cat">Youth Ministry</div><div class="ev-title">Annual Youth Camp 2025</div><div class="ev-desc">Three transformative days of worship, teaching, and encounter for young people aged 13–35. Registration: KSH 1,500.</div><div class="ev-footer"><div class="ev-time">📍 Malaba Campsite</div><button class="btn btn-ghost btn-sm" onclick="showModal('regModal')">Register</button></div></div>
+      </div>
+      <div class="ev-card reveal">
+        <div class="ev-banner" style="background:linear-gradient(135deg,#2e1a1a,#200e0e);">👔<div class="ev-date-pill"><div class="d">7</div><div class="m">Jun</div></div></div>
+        <div class="ev-body"><div class="ev-cat">Men's Ministry</div><div class="ev-title">Men's Breakfast & Leadership Forum</div><div class="ev-desc">A powerful morning of fellowship, breakfast, and discussion on Christian manhood, leadership, and fatherhood.</div><div class="ev-footer"><div class="ev-time">🕖 7:00 AM – 10:00 AM</div><button class="btn btn-ghost btn-sm" onclick="showModal('regModal')">RSVP</button></div></div>
+      </div>
+      <div class="ev-card reveal">
+        <div class="ev-banner" style="background:linear-gradient(135deg,#2e2a0a,#1a1a0a);">🌺<div class="ev-date-pill"><div class="d">21</div><div class="m">Jun</div></div></div>
+        <div class="ev-body"><div class="ev-cat">Women's Ministry</div><div class="ev-title">Women's Conference 2025</div><div class="ev-desc">Two days of empowerment, worship, and powerful teaching for the women of FGCK Malaba and beyond. Registration: KSH 500.</div><div class="ev-footer"><div class="ev-time">🕗 8:00 AM – 5:00 PM</div><button class="btn btn-ghost btn-sm" onclick="showModal('regModal')">Register</button></div></div>
+      </div>
+      <div class="ev-card reveal">
+        <div class="ev-banner" style="background:linear-gradient(135deg,#0a2e2e,#0a1a1a);">🎶<div class="ev-date-pill"><div class="d">19</div><div class="m">Jul</div></div></div>
+        <div class="ev-body"><div class="ev-cat">Annual Event</div><div class="ev-title">Annual Worship Night 2025</div><div class="ev-desc">An unforgettable evening of worship with guest teams from across the region. Free entry for all.</div><div class="ev-footer"><div class="ev-time">🕕 5:00 PM – Midnight</div><button class="btn btn-ghost btn-sm" onclick="showModal('regModal')">Free Ticket</button></div></div>
+      </div>
+      <div class="ev-card reveal">
+        <div class="ev-banner" style="background:linear-gradient(135deg,#1a0a2e,#0e0a1a);">📖<div class="ev-date-pill"><div class="d">9</div><div class="m">Aug</div></div></div>
+        <div class="ev-body"><div class="ev-cat">Church Anniversary</div><div class="ev-title">FGCK Malaba Anniversary Sunday</div><div class="ev-desc">Celebrating God's faithfulness in Malaba with a grand thanksgiving service, testimonies, and a family celebration lunch.</div><div class="ev-footer"><div class="ev-time">🕙 10:00 AM – All Day</div><button class="btn btn-ghost btn-sm" onclick="showModal('regModal')">RSVP</button></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WEEKLY SERVICES REMINDER -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="section-head center reveal"><div class="stag">Every Week</div><h2 class="stitle">Regular <em>Services</em></h2><p class="sdesc">In addition to special events, we gather faithfully every week. You are always welcome.</p></div>
+    <div class="services-grid">
+      <div class="svc-card reveal"><div class="svc-icon">🌅</div><div class="svc-name">Sunday Morning</div><div class="svc-time">10:00 AM</div><div class="svc-day">Every Sunday</div><div class="svc-desc">Main worship service with praise, preaching, and ministry. Children's church concurrent.</div></div>
+      <div class="svc-card reveal"><div class="svc-icon">🌇</div><div class="svc-name">Sunday Afternoon</div><div class="svc-time">3:00 PM</div><div class="svc-day">Every Sunday</div><div class="svc-desc">Testimonies, prayer, and deeper worship every Sunday afternoon.</div></div>
+      <div class="svc-card reveal"><div class="svc-icon">📚</div><div class="svc-name">Bible Study</div><div class="svc-time">5:30 PM</div><div class="svc-day">Every Wednesday</div><div class="svc-desc">Mid-week Bible study and discipleship — growing deeper in the Word together.</div></div>
+      <div class="svc-card reveal"><div class="svc-icon">🔥</div><div class="svc-name">Friday Prayer</div><div class="svc-time">7:00 PM</div><div class="svc-day">Every Friday</div><div class="svc-desc">Corporate intercession and spiritual warfare prayer meeting for all.</div></div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand"><h3>Full Gospel Churches of Kenya — Malaba</h3><p>A community of believers dedicated to proclaiming the Full Gospel of Jesus Christ and transforming lives.</p><div class="footer-socials"><div class="footer-social">📘</div><div class="footer-social">💬</div><div class="footer-social">▶️</div><div class="footer-social">📸</div></div></div>
+    <div class="footer-col"><h4>Navigate</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="sermons.html">Sermons</a></li><li><a href="events.html">Events</a></li><li><a href="give.html">Give</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h4>Events</h4><ul><li><a href="#">Easter Celebration</a></li><li><a href="#">Youth Camp</a></li><li><a href="#">Women's Conference</a></li><li><a href="#">Worship Night</a></li><li><a href="#">Anniversary</a></li></ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul><li><a href="#">Malaba, Busia County</a></li><li><a href="tel:+254700000000">+254 700 000 000</a></li><li><a href="mailto:info@fgckmalaba.org">info@fgckmalaba.org</a></li></ul></div>
+  </div>
+  <div class="footer-bar"><p>© 2025 Full Gospel Churches of Kenya — Malaba.</p><div class="footer-cross"></div><p>Designed with ❤️ for God's Glory</p></div>
+</footer>
+<button id="btt" aria-label="Back to top">↑</button>
+
+<div class="overlay" id="regModal"><div class="modal"><button class="modal-x" onclick="hideModal('regModal')">✕</button><div class="modal-icon">🎉</div><h3>Registration Received!</h3><p>Thank you! Our events team will contact you on WhatsApp within 24 hours to confirm. You can also call <strong style="color:var(--gold)">+254 700 000 000</strong>.</p><button class="btn btn-gold btn-block" onclick="hideModal('regModal')">Wonderful — Close</button></div></div>
+<div class="overlay" id="shareEventModal"><div class="modal"><button class="modal-x" onclick="hideModal('shareEventModal')">✕</button><div class="modal-icon">↗️</div><h3>Share This Event</h3><p>Invite your friends and family on WhatsApp, Facebook, and Instagram. Everyone is welcome at FGCK Malaba!</p><button class="btn btn-gold btn-block" onclick="hideModal('shareEventModal')">Close</button></div></div>
+
+<script src="main.js"></script>
+<script>
+  document.querySelectorAll('.cal-month').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.cal-month').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>
